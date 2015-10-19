@@ -1,0 +1,4 @@
+[package]
+name = "yaml_file_handler"
+version = "0.1.0"
+authors = ["JeanDenisVIDOT <jeandenis.vidot@live.com>"]
