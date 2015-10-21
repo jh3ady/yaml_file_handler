@@ -1,6 +1,6 @@
 # Yaml File handler
 
-rust```
+```rust
 fn main() {
   let mut handler = YamlHandler::new();
 
