@@ -2,6 +2,10 @@
 name = "yaml_file_handler"
 version = "0.1.0"
 authors = ["JeanDenisVIDOT <jeandenis.vidot@live.com>"]
+description = "A Yaml File Handler based on yaml-rust"
+homepage = "https://github.com/JeanDenisVIDOT/yaml_file_handler"
+readme = "README.md"
+license = "MIT"
 
 [dependencies]
-yaml-rust = "*"
+yaml-rust = "0.2.2"

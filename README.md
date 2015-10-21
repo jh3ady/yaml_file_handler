@@ -5,9 +5,18 @@ A Yaml File Handler written in Rust. Based on Yaml implementation of [Chyh1990]
 
 ## How to use it
 
+Cargo.toml
+
+```toml
+yaml_file_handler = "0.1.0"
+```
+
 Simple example:
 
 ```rust
+extern crate yaml_file_handler;
+use yaml_file_handler::YamlHandler;
+
 fn main() {
   let mut handler = YamlHandler::new();
 
