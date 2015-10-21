@@ -2,3 +2,6 @@
 name = "yaml_file_handler"
 version = "0.1.0"
 authors = ["JeanDenisVIDOT <jeandenis.vidot@live.com>"]
+
+[dependencies]
+yaml-rust = "*"
