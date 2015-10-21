@@ -3,6 +3,10 @@
 A Yaml File Handler written in Rust. Based on Yaml implementation of [Chyh1990]
 (https://github.com/chyh1990/yaml-rust)
 
+## How to use it
+
+Simple example:
+
 ```rust
 fn main() {
   let mut handler = YamlHandler::new();
