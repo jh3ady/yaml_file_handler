@@ -1,6 +1,6 @@
 # Yaml File handler
 
-A Yaml File Handler written in Rust. Based on Yaml implementation of [Chyh1990!]
+A Yaml File Handler written in Rust. Based on Yaml implementation of [Chyh1990]
 (https://github.com/chyh1990/yaml-rust)
 
 ```rust
