@@ -12,11 +12,8 @@ fn it_works() {
     ]);
 
     let data = match handler.read_all_files() {
-        Some(data)  => data,
-        None           => {
-            println!("none here test!!");
-            return;
-        }
+        Some(data) => data,
+        None => return,
     };
 
     println!("{}", data["parameters.yml"]["server"]["hostname"].as_str().unwrap());
