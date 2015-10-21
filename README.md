@@ -25,8 +25,8 @@ fn main() {
   ]);
 
   let data = match handler.read_all_files() {
-      Some(data)  => data,
-      None           => return,
+      Some(data) => data,
+      None => return,
   };
 
   println!("{}", data["parameters.yml"]["server"]["hostname"].as_str().unwrap());
