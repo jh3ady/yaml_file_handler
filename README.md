@@ -29,6 +29,15 @@ fn main() {
       None => return,
   };
 
+  // parameters.yml
+  // server:
+  //   hostname: localhost
+  //   port: 3000
+  // client:
+  //   hostname: 00.00.00.00
+  //   port: 5642
+  //
+  // to access to "localhost" : variable["filename+extension"]["server"]["hostname"]
   println!("{}", data["parameters.yml"]["server"]["hostname"].as_str().unwrap());
 }
 ```
