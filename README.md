@@ -26,10 +26,7 @@ fn main() {
 
   let data = match handler.read_all_files() {
       Some(data)  => data,
-          println!("none here test!!");
-      None           => {
-          return;
-      }
+      None           => return,
   };
 
   println!("{}", data["parameters.yml"]["server"]["hostname"].as_str().unwrap());
