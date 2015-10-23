@@ -8,6 +8,7 @@ use yaml_rust::yaml::Yaml;
 pub struct YamlHandler {
     files_content: Vec<(String, String)>,
     docs_content: HashMap<String, Yaml>,
+    index: i32,
 }
 
 impl YamlHandler {
@@ -54,14 +55,14 @@ impl YamlHandler {
                             .file_name().unwrap()
                             .to_str().unwrap()
                             .to_string(),
-                        docs[0].clone()
+                        docs[self.index].clone()
                     );
 
-                    return Some(self.docs_content.clone());
                 },
             }
+            self.index += 1;
         }
-        None
+        Some(self.docs_content.clone());
     }
 
     pub fn read_file(&mut self, file: &str) -> Option<HashMap<String, Yaml>> {
