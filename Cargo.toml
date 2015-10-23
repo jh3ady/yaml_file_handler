@@ -1,6 +1,6 @@
 [package]
 name = "yaml_file_handler"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["JeanDenisVIDOT <jeandenis.vidot@live.com>"]
 description = "A Yaml File Handler based on yaml-rust"
 homepage = "https://github.com/JeanDenisVIDOT/yaml_file_handler"

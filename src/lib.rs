@@ -1,6 +1,6 @@
 extern crate yaml_rust;
 
-mod yaml_handler;
+pub mod yaml_handler;
 use yaml_handler::YamlHandler;
 
 #[test]
@@ -11,10 +11,11 @@ fn it_works() {
         "app/ressources/config/parameters.yml"
     ]);
 
-    let data = match handler.read_all_files() {
+    let config = match handler.read_all_files() {
         Some(data) => data,
         None => return,
     };
 
-    println!("{}", data["parameters.yml"]["server"]["hostname"].as_str().unwrap());
+    println!("config['parameters.yml']['server']['hostname'] = {}", config["parameters.yml"]["server"]["hostname"].as_str().unwrap());
+
 }

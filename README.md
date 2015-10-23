@@ -15,29 +15,21 @@ Simple example:
 
 ```rust
 extern crate yaml_file_handler;
-use yaml_file_handler::YamlHandler;
+use yaml_file_handler::yaml_handler::YamlHandler;
 
 fn main() {
-  let mut handler = YamlHandler::new();
+    let mut handler = YamlHandler::new();
 
-  handler.add_files(vec![
-      "app/ressources/config/parameters.yml"
-  ]);
+    handler.add_files(vec![
+        "app/ressources/config/parameters.yml"
+    ]);
 
-  let data = match handler.read_all_files() {
-      Some(data) => data,
-      None => return,
-  };
+    let config = match handler.read_all_files() {
+        Some(data) => data,
+        None => return,
+    };
 
-  // parameters.yml
-  // server:
-  //   hostname: localhost
-  //   port: 3000
-  // client:
-  //   hostname: 00.00.00.00
-  //   port: 5642
-  //
-  // to access to "localhost" : variable["filename+extension"]["server"]["hostname"]
-  println!("{}", data["parameters.yml"]["server"]["hostname"].as_str().unwrap());
+    println!("config['parameters.yml']['server']['hostname'] = {}", config["parameters.yml"]["server"]["hostname"].as_str().unwrap());
 }
+
 ```
