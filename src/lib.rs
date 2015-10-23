@@ -1,14 +1,15 @@
 extern crate yaml_rust;
 
 pub mod yaml_handler;
-use yaml_handler::YamlHandler;
+use yaml_handler::FileHandler;
 
 #[test]
 fn it_works() {
-    let mut handler = YamlHandler::new();
+    let mut handler = FileHandler::new();
 
     handler.add_files(vec![
-        "app/ressources/config/parameters.yml"
+        "parameters.yml",
+        "routing.yml"
     ]);
 
     let config = match handler.read_all_files() {
@@ -16,6 +17,5 @@ fn it_works() {
         None => return,
     };
 
-    println!("config['parameters.yml']['server']['hostname'] = {}", config["parameters.yml"]["server"]["hostname"].as_str().unwrap());
-
+    println!("config['parameters']['server']['hostname'] = {}", config["parameters"]["server"]["hostname"].as_str().unwrap());
 }

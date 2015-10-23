@@ -8,20 +8,24 @@ A Yaml File Handler written in Rust. Based on Yaml implementation of [Chyh1990]
 Cargo.toml
 
 ```toml
-yaml_file_handler = "0.1.1"
+yaml_file_handler = "0.1.3"
 ```
 
 Simple example:
 
 ```rust
-extern crate yaml_file_handler;
-use yaml_file_handler::yaml_handler::YamlHandler;
+extern crate yaml_rust;
 
-fn main() {
-    let mut handler = YamlHandler::new();
+pub mod yaml_handler;
+use yaml_handler::FileHandler;
+
+#[test]
+fn it_works() {
+    let mut handler = FileHandler::new();
 
     handler.add_files(vec![
-        "app/ressources/config/parameters.yml"
+        "parameters.yml",
+        "routing.yml"
     ]);
 
     let config = match handler.read_all_files() {
@@ -29,7 +33,6 @@ fn main() {
         None => return,
     };
 
-    println!("config['parameters.yml']['server']['hostname'] = {}", config["parameters.yml"]["server"]["hostname"].as_str().unwrap());
+    println!("config['parameters']['server']['hostname'] = {}", config["parameters"]["server"]["hostname"].as_str().unwrap());
 }
-
 ```
