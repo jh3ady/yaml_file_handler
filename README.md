@@ -8,7 +8,7 @@ A Yaml File Handler written in Rust. Based on Yaml implementation of [Chyh1990]
 Cargo.toml
 
 ```toml
-yaml_file_handler = "0.1.3"
+yaml_file_handler = "0.1.4"
 ```
 
 Simple example:

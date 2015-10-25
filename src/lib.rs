@@ -1,4 +1,5 @@
 extern crate yaml_rust;
+pub use yaml_rust::*;
 
 pub mod yaml_handler;
 use yaml_handler::FileHandler;
